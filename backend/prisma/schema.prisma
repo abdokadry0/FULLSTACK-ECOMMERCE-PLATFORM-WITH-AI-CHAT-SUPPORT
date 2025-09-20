@@ -1,12 +1,13 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
+// NOTE: This is a sanitized version for portfolio showcase
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -18,7 +19,7 @@ model User {
   lastName       String?   @map("last_name")
   phone          String?
   emailVerified  Boolean   @default(false) @map("email_verified")
-  stripeCustomerId String? @map("stripe_customer_id")
+  // Removed: stripeCustomerId - sensitive payment integration data
   createdAt      DateTime  @default(now()) @map("created_at")
   updatedAt      DateTime  @updatedAt @map("updated_at")
 
@@ -58,7 +59,7 @@ model Product {
   sku                 String?   @unique
   price               Decimal
   comparePrice        Decimal?  @map("compare_price")
-  costPrice           Decimal?  @map("cost_price")
+  // Removed: costPrice - sensitive business data
   inventoryQuantity   Int       @default(0) @map("inventory_quantity")
   trackInventory      Boolean   @default(true) @map("track_inventory")
   allowBackorders     Boolean   @default(false) @map("allow_backorders")
@@ -146,7 +147,7 @@ model Order {
   totalAmount            Decimal   @map("total_amount")
   currency               String    @default("USD")
   paymentMethod          String?   @map("payment_method")
-  stripePaymentIntentId  String?   @map("stripe_payment_intent_id")
+  // Removed: stripePaymentIntentId - sensitive payment integration data
   shippingAddressId      Int?      @map("shipping_address_id")
   billingAddressId       Int?      @map("billing_address_id")
   notes                  String?

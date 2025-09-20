@@ -46,6 +46,7 @@
     "react-day-picker": "8.10.1",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.56.2",
+    "react-hot-toast": "^2.6.0",
     "react-resizable-panels": "^3.0.1",
     "react-router-dom": "^7.5.1",
     "react-scripts": "5.0.1",
@@ -59,7 +60,13 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "build:prod": "NODE_ENV=production craco build",
+    "test": "craco test",
+    "test:prod": "NODE_ENV=production craco test --coverage --watchAll=false",
+    "analyze": "npm run build:prod && npx serve -s build",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "preview": "npx serve -s build -l 3000"
   },
   "browserslist": {
     "production": [

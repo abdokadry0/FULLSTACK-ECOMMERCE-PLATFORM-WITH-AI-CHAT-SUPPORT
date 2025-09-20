@@ -1,5 +1,8 @@
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 import { connectDatabase, disconnectDatabase } from './config/database';
 import {
   generalLimiter,
@@ -11,15 +14,33 @@ import {
   errorHandler,
   notFoundHandler,
 } from './middleware/security';
+import attributionMiddleware from './utils/attributionMiddleware';
 
 // Import routes
 import authRoutes from './routes/auth';
 import productRoutes from './routes/products';
 import cartRoutes from './routes/cart';
 import orderRoutes from './routes/orders';
-import paymentRoutes from './routes/payments';
+import categoryRoutes from './routes/categories';
+import paymentRoutes from './routes/payment';
+
+// Security Core - Attribution Protection System
+const backendSecurityCore = require('./utils/securityCore');
 
 const app = express();
+
+// Initialize security systems
+backendSecurityCore.init();
+attributionMiddleware.init();
+
+// Security headers middleware
+app.use(backendSecurityCore.securityHeaders());
+
+// Attribution middleware (must be early in the chain)
+app.use(attributionMiddleware.middleware());
+
+// Request monitoring
+app.use(backendSecurityCore.requestMonitoring());
 
 // Trust proxy for rate limiting
 app.set('trust proxy', 1);
@@ -58,6 +79,10 @@ app.use('/api/products', productRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
+
+// Attribution and security status endpoints
+app.get('/api/attribution', (req, res) => attributionMiddleware.getAttributionInfo(req, res));
+app.get('/api/security-status', (req, res) => attributionMiddleware.getSecurityStatus(req, res));
 
 // 404 handler
 app.use(notFoundHandler);

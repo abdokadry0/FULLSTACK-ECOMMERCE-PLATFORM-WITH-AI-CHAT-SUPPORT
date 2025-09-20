@@ -1,0 +1,94 @@
+PORTFOLIO DEMONSTRATION LICENSE
+
+Copyright (c) 2025 Lance Cabanit - E-commerce Platform Portfolio Project
+
+IMPORTANT NOTICE: This software is provided as a portfolio demonstration and is protected by intellectual property rights.
+
+PORTFOLIO DEMONSTRATION LICENSE TERMS:
+
+1. PERMITTED USES:
+   - Viewing and reviewing the code for evaluation purposes
+   - Educational study of software architecture and implementation patterns
+   - Technical assessment for employment or collaboration opportunities
+   - Academic research and learning (with proper attribution)
+
+2. RESTRICTED USES:
+   - Commercial use or deployment without explicit written permission
+   - Redistribution or sharing of the complete codebase
+   - Modification and redistribution without authorization
+   - Use of proprietary algorithms or business logic in other projects
+   - Reverse engineering of obfuscated components
+
+3. OBFUSCATED COMPONENTS:
+   This portfolio contains intentionally obfuscated code sections to protect:
+   - Proprietary business logic and algorithms
+   - Security implementations and authentication mechanisms
+   - Payment processing and financial transaction handling
+   - Advanced optimization techniques and performance enhancements
+   - Integration patterns with third-party services
+
+4. DEMO DATA AND MOCK IMPLEMENTATIONS:
+   - All payment processing uses mock/demo implementations
+   - Database contains sanitized demo data only
+   - API keys and secrets are placeholder values
+   - Real production implementations are protected and not included
+
+5. INTELLECTUAL PROPERTY PROTECTION:
+   - Core business logic remains proprietary
+   - Advanced security measures are obfuscated
+   - Production-ready optimizations are not disclosed
+   - Scalability solutions and performance enhancements are protected
+
+6. ATTRIBUTION REQUIREMENTS:
+   If referencing this work in academic or professional contexts:
+   - Provide proper attribution to the original developer
+   - Include reference to this license
+   - Do not claim ownership of the demonstrated concepts
+
+7. NO WARRANTY:
+   This software is provided "AS IS" for demonstration purposes only.
+   No warranties are provided regarding functionality, security, or fitness
+   for any particular purpose.
+
+8. CONTACT FOR LICENSING:
+   For commercial licensing, collaboration, or access to production-ready
+   implementations, please contact:
+   
+   Email: cabanitlance43@gmail.com
+   LinkedIn: linkedin.com/in/lance-cabanit
+   Portfolio: lanceport-fullstack.onrender.com
+
+9. LEGAL ENFORCEMENT:
+   Violation of these terms may result in:
+   - Legal action for intellectual property infringement
+   - Cease and desist orders
+   - Damages for unauthorized commercial use
+   - Removal of access to demonstration materials
+
+10. JURISDICTION:
+    This license is governed by [Jurisdiction] law and any disputes
+    shall be resolved in the courts of [Jurisdiction].
+
+By accessing, viewing, or using this code, you acknowledge that you have
+read, understood, and agree to be bound by these license terms.
+
+Last Updated: December 2024
+License Version: 1.0
+
+---
+
+TECHNICAL IMPLEMENTATION NOTES:
+
+This portfolio demonstrates advanced e-commerce platform capabilities including:
+- Microservices architecture with TypeScript/Node.js
+- React frontend with modern UI/UX patterns
+- PostgreSQL database with optimized schema design
+- Redis caching and session management
+- Stripe payment integration (demo implementation)
+- JWT-based authentication and authorization
+- RESTful API design with comprehensive error handling
+- Docker containerization and deployment strategies
+- Advanced security measures and data protection
+
+For full production implementation details and licensing opportunities,
+please contact the developer directly.
